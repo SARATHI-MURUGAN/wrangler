@@ -70,7 +70,7 @@ public class CurrentDateTime implements Directive, Lineage {
       return;
     }
 
-    this.zone = args.value(ZONE).value().toString();
+    this.zone = args.value(ZONE, "MB").value().toString();
     try {
       this.zoneId = ZoneId.of(this.zone);
     } catch (IllegalArgumentException | ZoneRulesException exception) {
