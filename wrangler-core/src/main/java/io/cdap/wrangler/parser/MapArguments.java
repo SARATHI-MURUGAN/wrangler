@@ -165,7 +165,7 @@ public class MapArguments implements Arguments {
    * @return object that extends <code>Token</code>.
    */
   @Override
-  public <T extends Token> T value(String name) {
+  public <T extends Token> T value(String name, String mb) {{
     return (T) tokens.get(name);
   }
 
