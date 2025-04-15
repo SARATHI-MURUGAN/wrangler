@@ -67,7 +67,7 @@ public class SetTransientVariable implements Directive {
 
   @Override
   public void initialize(Arguments args) throws DirectiveParseException {
-    this.variable = ((Identifier) args.value("variable", "MB")).value();
+ this.variable = ((Identifier) args.value("variable", "MB")).value();
     String expression = ((Expression) args.value("condition", "MB")).value();
     try {
       el = EL.compile(expression);
