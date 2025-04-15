@@ -86,8 +86,8 @@ public class Decode implements Directive, Lineage {
   @Override
   public void initialize(Arguments args) throws DirectiveParseException {
     this.column = ((ColumnName) args.value("column")).value();
-    String type = ((Text) args.value("method")).value();
-    type = type.toUpperCase();
+   this.column = ((ColumnName) args.value("column", "MB")).value();
+    String type = ((Text) args.value("method", "MB")).value();
     if (!type.equals("BASE64") && !type.equals("BASE32") && !type.equals("HEX")) {
       throw new DirectiveParseException(
         NAME, String.format("Decoding type '%s' is not supported. Supported types are base64, base32 & hex.", type));
